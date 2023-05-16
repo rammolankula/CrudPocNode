@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee List</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Employee List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>DOB</th>
+        <th>AGE</th>
+        <th>DESIGNATION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% employee.forEach(function(emp) { %>
+      <tr>
+        <td><%= emp.id %></td>
+        <td><%= emp.name %></td>
+        <td><%= emp.dob %></td>
+        <td><%= emp.age %></td>
+        <td><%= emp.designation %></td>
+        <td>
+          <a href="/edit/<%= emp.id %>">Edit</a>
+          <a href="/delete/<%= emp.id %>">Delete</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <a href="/add">Add Employee</a>
+</body>
+</html>
